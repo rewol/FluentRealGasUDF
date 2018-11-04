@@ -33,13 +33,6 @@
 #include "ctype.h"
 #include "stdarg.h"
 
-#if RP_DOUBLE
-#define SMLL 1.e-20
-#else
-#define SMLL 1.e-10
-#endif
-
-
 #define N_SPECIES 9
 #define N_SPECIES_NAME 80
 #define R 8314.34
@@ -197,8 +190,6 @@ for (i=0; i<N_SPECIES; i++)
 }
 
 }
-
-
 
 /*********************************************/
 /************ MIXTURE FUNCTIONS **************/
@@ -730,9 +721,7 @@ double b_mixture_wanderwaals(struct thermo *argument)
 	double sum = 0;
 	double mixture_mw;
 	double xi[5];
-	
-	
-	
+		
 	for(i=0;i<N_SPECIES;i++)
 	{
 		/*xi[i] = argument->species[i]*mixture_mw/mw[i];*/
